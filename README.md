@@ -1,22 +1,39 @@
-# Welcome to your Lovable project
+# AD Blocker by Schedise
+
+A powerful and efficient ad blocker extension for Chrome that helps you browse the web faster and safer.
+
+## Features
+
+- Block annoying ads and pop-ups
+- Protect your privacy by blocking trackers
+- Faster web browsing experience
+- Clean and user-friendly interface
+- Free to use
+
+## Getting Started
+
+1. Clone this repository
+2. Install dependencies with `npm install`
+3. Run the development server with `npm run dev`
+4. Build for production with `npm run build`
+
+## Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Project info
-
-**URL**: https://lovable.dev/projects/aeb58bdb-a40f-4ecf-b55e-6fa9bcc6a2e7
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/aeb58bdb-a40f-4ecf-b55e-6fa9bcc6a2e7) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +79,17 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/aeb58bdb-a40f-4ecf-b55e-6fa9bcc6a2e7) and click on Share -> Publish.
+To deploy this project:
 
-## Can I connect a custom domain to my Lovable project?
+1. Build the project for production:
 
-Yes it is!
+   ```sh
+   npm run build
+   ```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+2. The built files will be in the `dist` directory
+3. Deploy these files to your preferred hosting platform (Vercel, Netlify, GitHub Pages, etc.)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Can I connect a custom domain to my project?
+
+Yes! The process depends on your hosting provider. Most modern hosting platforms provide straightforward ways to connect custom domains. Check your hosting provider's documentation for specific instructions on how to set up a custom domain for your deployment.
