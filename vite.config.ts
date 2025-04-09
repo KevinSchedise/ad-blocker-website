@@ -13,7 +13,7 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: process.env.NODE_ENV === "development",
-    minify: "terser",
+    minify: "esbuild",
     rollupOptions: {
       output: {
         manualChunks: {
