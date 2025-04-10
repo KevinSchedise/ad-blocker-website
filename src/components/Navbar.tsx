@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ShieldX } from "lucide-react";
+import {
+  Menu,
+  X,
+  ShieldX,
+  Home,
+  Chrome,
+  ArrowUpRight,
+  Sparkles,
+  Info,
+  LifeBuoy,
+  Layers,
+} from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showBorder, setShowBorder] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const location = useLocation();
 
   const toggleMenu = () => {
@@ -16,15 +29,55 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      // Show navbar when scrolling up or at top
+      if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+        setShowBorder(currentScrollY > 0);
+      }
+      // Hide navbar when scrolling down and not at top
+      else if (currentScrollY > lastScrollY && currentScrollY > 0) {
+        setIsVisible(false);
+        setShowBorder(false);
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateNavbar);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const navigation = [
-    { name: "Features", href: "/features" },
-    { name: "Premium", href: "/premium" },
-    { name: "About", href: "/about" },
-    { name: "Support", href: "/support" },
+    { name: "Home", href: "/", icon: Home },
+    { name: "Features", href: "/features", icon: Layers },
+    { name: "Premium", href: "/premium", icon: Sparkles },
+    { name: "About", href: "/about", icon: Info },
+    { name: "Support", href: "/support", icon: LifeBuoy },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+    <nav
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm transition-transform duration-300",
+        showBorder && "border-b border-gray-100 shadow-sm",
+        !isVisible && "transform -translate-y-full"
+      )}
+    >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -55,30 +108,27 @@ const Navbar = () => {
                     to={item.href}
                     onClick={scrollToTop}
                     className={cn(
-                      "px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                      isActive
-                        ? "text-schedise-indigo bg-schedise-indigo/5"
-                        : "text-gray-700 hover:text-schedise-indigo hover:bg-gray-50"
+                      "px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1.5",
+                      isActive ? "text-schedise-red" : "text-gray-700"
                     )}
                   >
+                    {isActive && <item.icon className="h-4 w-4" />}
                     {item.name}
                   </Link>
                 );
               })}
             </div>
             <div className="ml-6">
-              <Button
-                asChild
-                className="bg-schedise-red hover:bg-schedise-red/90 text-white"
+              <Link
+                to="https://chrome.google.com/webstore"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors text-schedise-red"
               >
-                <Link
-                  to="https://chrome.google.com/webstore"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Add to Chrome
-                </Link>
-              </Button>
+                <Chrome className="h-4 w-4" />
+                Add to Chrome
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
 
@@ -110,35 +160,30 @@ const Navbar = () => {
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "block px-3 py-2 rounded-md text-base font-medium",
-                  isActive
-                    ? "text-schedise-indigo bg-schedise-indigo/5"
-                    : "text-gray-700 hover:text-schedise-indigo hover:bg-gray-50"
+                  "flex items-center gap-1.5 px-3 py-2 text-base font-medium",
+                  isActive ? "text-schedise-red" : "text-gray-700"
                 )}
                 onClick={() => {
                   setIsOpen(false);
                   scrollToTop();
                 }}
               >
+                {isActive && <item.icon className="h-4 w-4" />}
                 {item.name}
               </Link>
             );
           })}
-          <div className="py-2">
-            <Button
-              asChild
-              className="w-full bg-schedise-red hover:bg-schedise-red/90 text-white"
-            >
-              <Link
-                to="https://chrome.google.com/webstore"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-              >
-                Add to Chrome
-              </Link>
-            </Button>
-          </div>
+          <Link
+            to="https://chrome.google.com/webstore"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-2 text-base font-medium text-schedise-red"
+            onClick={() => setIsOpen(false)}
+          >
+            <Chrome className="h-4 w-4" />
+            Add to Chrome
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </nav>
