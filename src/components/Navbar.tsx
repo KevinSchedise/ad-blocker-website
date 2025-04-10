@@ -1,19 +1,18 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import {
-  Menu,
-  X,
-  ShieldX,
-  Home,
-  Chrome,
   ArrowUpRight,
-  Sparkles,
+  Chrome,
+  Home,
   Info,
-  LifeBuoy,
   Layers,
+  LifeBuoy,
+  Menu,
+  ShieldX,
+  Sparkles,
+  X,
 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
