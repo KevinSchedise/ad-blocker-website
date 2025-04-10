@@ -68,7 +68,7 @@ export function CreativePricing({
             <div className="relative p-6">
               {tier.popular && (
                 <div
-                  className="absolute -top-2 -right-2 bg-amber-400 text-zinc-900 
+                  className="absolute -top-2 -right-2 bg-red-400 text-zinc-900 
                                     px-3 py-1 rounded-full rotate-12 text-sm border-2 border-zinc-900 font-medium"
                 >
                   Most Popular!
