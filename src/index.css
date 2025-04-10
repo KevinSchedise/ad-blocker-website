@@ -1,9 +1,59 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom cursor styles */
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.cursor-circle {
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.15s ease-out, border-color 0.3s ease-in-out;
+}
+
+/* Hide default cursor */
+* {
+  cursor: none !important;
+}
+
+/* Change cursor color on interactive elements */
+a:hover ~ .cursor-dot,
+button:hover ~ .cursor-dot,
+[role="button"]:hover ~ .cursor-dot,
+input:hover ~ .cursor-dot,
+textarea:hover ~ .cursor-dot,
+select:hover ~ .cursor-dot,
+[onclick]:hover ~ .cursor-dot,
+[tabindex]:hover ~ .cursor-dot {
+  background-color: #D90429;
+}
+
+a:hover ~ .cursor-circle,
+button:hover ~ .cursor-circle,
+[role="button"]:hover ~ .cursor-circle,
+input:hover ~ .cursor-circle,
+textarea:hover ~ .cursor-circle,
+select:hover ~ .cursor-circle,
+[onclick]:hover ~ .cursor-circle,
+[tabindex]:hover ~ .cursor-circle {
+  border-color: rgba(217, 4, 41, 0.5);
+}
 
 @layer base {
   :root {

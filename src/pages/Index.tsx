@@ -1,10 +1,28 @@
+import CTAButton from "@/components/CTAButton";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import { GridPattern } from "@/components/ui/grid-pattern";
+import {
+  BarChart,
+  CheckCircle2,
+  ChevronRight,
+  LineChart,
+  Lock,
+  PieChart,
+  Shield,
+  ShieldCheck,
+  ShieldX,
+  TrendingUp,
+  XCircle,
+  Zap,
+  Download,
+  Sparkles,
+} from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import FeatureCard from "@/components/FeatureCard";
-import CTAButton from "@/components/CTAButton";
-import { ShieldCheck, Zap, Lock, LineChart, ChevronRight, CheckCircle2, BarChart, Shield, XCircle, PieChart, TrendingUp, ShieldX } from "lucide-react";
+import { Spotlight } from "@/components/ui/spotlight";
+import Banner from "@/components/Banner";
 
 const Index = () => {
   useEffect(() => {
@@ -24,30 +42,42 @@ const Index = () => {
                 <div className="inline-block px-4 py-1.5 bg-schedise-indigo/10 rounded-full text-schedise-indigo font-medium text-sm mb-6">
                   Browse Faster. Browse Safer.
                 </div>
+                
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                  <span className="text-schedise-red block">Stop Seeing Ads.</span>
+                  <span className="text-schedise-red block">
+                    Stop Seeing Ads.
+                  </span>
                   Start Enjoying the Web.
                 </h1>
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                  Ad Blocker by Schedise removes annoying ads, pop-ups, and trackers. Experience websites as they were meant to be – clean, fast, and private.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <CTAButton 
-                    href="https://chrome.google.com/webstore" 
-                    variant="primary" 
-                    size="lg"
+
+                <div className="flex flex-col sm:flex-row mb-4 gap-4">
+                  <Link
+                    to="https://chrome.google.com/webstore"
+                    className="group flex items-center justify-center gap-2 py-3 text-gray-900 transition-all duration-300 hover:text-schedise-red"
                   >
-                    Add to Chrome - It's Free
-                  </CTAButton>
-                  <CTAButton 
-                    href="/features" 
-                    variant="secondary"
-                    size="lg"
+                    <Download className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                    <span className="font-medium">
+                      Add to Chrome - It's Free
+                    </span>
+                    <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                  <Link
+                    to="/features"
+                    className="group flex items-center justify-center gap-2 px-6 py-3 text-gray-900 transition-all duration-300 hover:text-schedise-red"
                   >
-                    Learn More
-                  </CTAButton>
+                    <Sparkles className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                    <span className="font-medium">Learn More</span>
+                    <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
                 </div>
-                
+
+                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                  Ad Blocker by Schedise removes annoying ads, pop-ups, and
+                  trackers. Experience websites as they were meant to be –
+                  clean, fast, and private.
+                </p>
+              
+
                 <div className="mt-8 flex items-center flex-wrap gap-6">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="text-green-500" size={18} />
@@ -71,7 +101,9 @@ const Index = () => {
                       <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
                       <div className="h-3 w-3 rounded-full bg-green-400"></div>
                     </div>
-                    <div className="mx-auto text-xs text-gray-500 font-medium">Clean browsing experience</div>
+                    <div className="mx-auto text-xs text-gray-500 font-medium">
+                      Clean browsing experience
+                    </div>
                   </div>
                   <div className="relative p-4 flex">
                     <div className="flex-1">
@@ -97,8 +129,12 @@ const Index = () => {
                       {/* Blocked ad overlay */}
                       <div className="absolute inset-0 bg-red-50 border border-red-100 rounded-lg flex flex-col items-center justify-center text-center p-2 transform -translate-x-full opacity-0">
                         <XCircle size={24} className="text-schedise-red mb-2" />
-                        <div className="text-sm font-medium text-schedise-red mb-1">Advertisement Blocked</div>
-                        <div className="text-xs text-red-500">Ad Blocker by Schedise</div>
+                        <div className="text-sm font-medium text-schedise-red mb-1">
+                          Advertisement Blocked
+                        </div>
+                        <div className="text-xs text-red-500">
+                          Ad Blocker by Schedise
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -122,178 +158,285 @@ const Index = () => {
         </section>
 
         {/* Stats Section - UPDATED STATS */}
-        <section className="py-12 bg-white border-y border-gray-100">
+        <section className="py-12 bg-white">
           <div className="container-custom">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-schedise-red mb-2">10k+</div>
+              <div className="text-center p-6 rounded-xl bg-white/40 backdrop-blur-sm shadow-[inset_0px_0px_20px_rgba(255,255,255,0.5)] hover:shadow-[inset_0px_0px_40px_rgba(255,255,255,0.8),0px_0px_20px_rgba(255,255,255,0.8)] transition-all duration-300 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                <div className="text-3xl md:text-4xl font-bold text-schedise-red mb-2">
+                  10k+
+                </div>
                 <p className="text-sm text-gray-600">Ads Blocked Daily</p>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-schedise-red mb-2">5k+</div>
+              <div className="text-center p-6 rounded-xl bg-white/40 backdrop-blur-sm shadow-[inset_0px_0px_20px_rgba(255,255,255,0.5)] hover:shadow-[inset_0px_0px_40px_rgba(255,255,255,0.8),0px_0px_20px_rgba(255,255,255,0.8)] transition-all duration-300 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                <div className="text-3xl md:text-4xl font-bold text-schedise-red mb-2">
+                  5k+
+                </div>
                 <p className="text-sm text-gray-600">Early Users</p>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-schedise-red mb-2">2x</div>
+              <div className="text-center p-6 rounded-xl bg-white/40 backdrop-blur-sm shadow-[inset_0px_0px_20px_rgba(255,255,255,0.5)] hover:shadow-[inset_0px_0px_40px_rgba(255,255,255,0.8),0px_0px_20px_rgba(255,255,255,0.8)] transition-all duration-300 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                <div className="text-3xl md:text-4xl font-bold text-schedise-red mb-2">
+                  2x
+                </div>
                 <p className="text-sm text-gray-600">Faster Browsing</p>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-schedise-red mb-2">98.5%</div>
+              <div className="text-center p-6 rounded-xl bg-white/40 backdrop-blur-sm shadow-[inset_0px_0px_20px_rgba(255,255,255,0.5)] hover:shadow-[inset_0px_0px_40px_rgba(255,255,255,0.8),0px_0px_20px_rgba(255,255,255,0.8)] transition-all duration-300 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                <div className="text-3xl md:text-4xl font-bold text-schedise-red mb-2">
+                  98.5%
+                </div>
                 <p className="text-sm text-gray-600">Blocking Accuracy</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Features Section with Modern Cards */}
+        {/* Features Section with Bento Grid */}
         <section className="py-20 bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Features</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Key Features
+              </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                Our ad blocker provides the essential tools you need for a cleaner, faster, and more private browsing experience.
+                Our ad blocker provides the essential tools you need for a
+                cleaner, faster, and more private browsing experience.
               </p>
             </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <FeatureCard
-                icon={<ShieldCheck size={24} />}
-                title="Block All Ads"
+
+            <BentoGrid className="lg:grid-rows-3">
+              <BentoCard
+                icon={ShieldCheck}
+                name="Block All Ads"
                 description="Effectively blocks banner ads, sidebar ads, pop-ups, and video ads across websites."
-                className="transform transition-all duration-300 hover:translate-y-[-5px]"
+                className="lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-4"
               />
-              <FeatureCard
-                icon={<Zap size={24} />}
-                title="Faster Browsing"
+              <BentoCard
+                icon={Zap}
+                name="Faster Browsing"
                 description="Experience up to 2x faster page load times by blocking resource-heavy advertisements."
-                className="transform transition-all duration-300 hover:translate-y-[-5px]"
+                className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3"
               />
-              <FeatureCard
-                icon={<Lock size={24} />}
-                title="Privacy Protection"
+              <BentoCard
+                icon={Lock}
+                name="Privacy Protection"
                 description="Blocks basic trackers to protect your privacy while browsing the web."
-                className="transform transition-all duration-300 hover:translate-y-[-5px]"
+                className="lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4"
               />
-              <FeatureCard
-                icon={<LineChart size={24} />}
-                title="Performance Insights"
+              <BentoCard
+                icon={LineChart}
+                name="Performance Insights"
                 description="See how many ads have been blocked and how much bandwidth you've saved."
-                className="transform transition-all duration-300 hover:translate-y-[-5px]"
+                className="lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2"
               />
-              <FeatureCard
-                icon={<PieChart size={24} />}
-                title="Easy Customization"
+              <BentoCard
+                icon={PieChart}
+                name="Easy Customization"
                 description="Whitelist your favorite websites with just one click to support content creators."
-                className="transform transition-all duration-300 hover:translate-y-[-5px]"
+                className="lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4"
               />
-              <FeatureCard
-                icon={<TrendingUp size={24} />}
-                title="Constantly Updated"
-                description="Our filter lists are continuously updated to protect against the latest ad techniques."
-                className="transform transition-all duration-300 hover:translate-y-[-5px]"
-              />
-            </div>
-            
+            </BentoGrid>
+
             <div className="text-center mt-12">
-              <Link 
+              <Link
                 to="/features"
                 onClick={() => window.scrollTo(0, 0)}
                 className="inline-flex items-center text-schedise-indigo font-medium hover:underline"
               >
-                View all features 
+                View all features
                 <ChevronRight size={18} className="ml-1" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* How It Works Section with Infographic */}
-        <section className="py-20 bg-gray-50">
+        {/* How It Works Section with Modern Design */}
+        <section className="py-20 bg-white">
           <div className="container-custom">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                How It Works
+              </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                Getting started with Ad Blocker by Schedise is simple and takes just seconds.
+                Getting started with Ad Blocker by Schedise is simple and takes
+                just seconds.
               </p>
             </div>
-            
-            <div className="relative">
-              {/* Connection line */}
-              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gray-200 -translate-y-1/2 z-0"></div>
-              
-              <div className="grid md:grid-cols-3 gap-12 relative z-10">
-                <div className="flex flex-col items-center text-center bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                  <div className="w-16 h-16 bg-schedise-red rounded-full flex items-center justify-center text-white mb-6 text-xl font-bold">
-                    1
-                  </div>
-                  <h3 className="text-xl font-bold mb-4">Install the Extension</h3>
-                  <p className="text-gray-700">
-                    Add our extension to Chrome with just one click. No signup required.
-                  </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-8 max-w-7xl mx-auto">
+              <div className="relative bg-gradient-to-b from-neutral-100 to-white p-8 rounded-3xl overflow-hidden border border-neutral-200/50 shadow-sm">
+                <BackgroundGrid size={20} />
+                <div className="w-16 h-16 bg-schedise-red rounded-full flex items-center justify-center text-white mb-6 text-xl font-bold relative z-20">
+                  1
                 </div>
-                <div className="flex flex-col items-center text-center bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                  <div className="w-16 h-16 bg-schedise-red rounded-full flex items-center justify-center text-white mb-6 text-xl font-bold">
-                    2
-                  </div>
-                  <h3 className="text-xl font-bold mb-4">Automatic Blocking</h3>
-                  <p className="text-gray-700">
-                    Our extension immediately begins blocking ads and trackers on all websites.
-                  </p>
+                <h3 className="text-xl font-bold mb-4 text-neutral-800 relative z-20">
+                  Install the Extension
+                </h3>
+                <p className="text-neutral-600 relative z-20">
+                  Add our extension to Chrome with just one click. No signup
+                  required.
+                </p>
+              </div>
+
+              <div className="relative bg-gradient-to-b from-neutral-100 to-white p-8 rounded-3xl overflow-hidden border border-neutral-200/50 shadow-sm">
+                <BackgroundGrid size={20} />
+                <div className="w-16 h-16 bg-schedise-red rounded-full flex items-center justify-center text-white mb-6 text-xl font-bold relative z-20">
+                  2
                 </div>
-                <div className="flex flex-col items-center text-center bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                  <div className="w-16 h-16 bg-schedise-red rounded-full flex items-center justify-center text-white mb-6 text-xl font-bold">
-                    3
-                  </div>
-                  <h3 className="text-xl font-bold mb-4">Enjoy Cleaner Browsing</h3>
-                  <p className="text-gray-700">
-                    Experience a faster, cleaner, and more private browsing experience instantly.
-                  </p>
+                <h3 className="text-xl font-bold mb-4 text-neutral-800 relative z-20">
+                  Automatic Blocking
+                </h3>
+                <p className="text-neutral-600 relative z-20">
+                  Our extension immediately begins blocking ads and trackers on
+                  all websites.
+                </p>
+              </div>
+
+              <div className="relative bg-gradient-to-b from-neutral-100 to-white p-8 rounded-3xl overflow-hidden border border-neutral-200/50 shadow-sm">
+                <BackgroundGrid size={20} />
+                <div className="w-16 h-16 bg-schedise-red rounded-full flex items-center justify-center text-white mb-6 text-xl font-bold relative z-20">
+                  3
                 </div>
+                <h3 className="text-xl font-bold mb-4 text-neutral-800 relative z-20">
+                  Enjoy Cleaner Browsing
+                </h3>
+                <p className="text-neutral-600 relative z-20">
+                  Experience a faster, cleaner, and more private browsing
+                  experience instantly.
+                </p>
               </div>
             </div>
-            
+
             {/* Performance Chart */}
-            <div className="mt-20 bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-              <h3 className="text-2xl font-bold mb-6 text-center">Performance Improvement</h3>
-              <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="flex-1">
-                  <div className="space-y-6">
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium">Page Load Time</span>
-                        <span className="text-green-600 font-medium">-58%</span>
+            <div className="mt-20 bg-white p-12 rounded-3xl overflow-hidden border border-neutral-200/50 shadow-lg relative">
+              <div className="absolute inset-0 bg-grid-neutral-100/25 [mask-image:radial-gradient(white,transparent_70%)]" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-5">
+                <TrendingUp className="w-96 h-96 text-schedise-red transform rotate-12" />
+              </div>
+              <BackgroundGrid size={20} />
+              <div className="relative z-20">
+                <div className="flex flex-col lg:flex-row gap-12 items-stretch">
+                  <div className="flex-1 space-y-8">
+                    <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-200/50 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
+                      <div className="flex justify-between items-center mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-schedise-red/10 rounded-lg">
+                            <Zap className="h-5 w-5 text-schedise-red" />
+                          </div>
+                          <span className="font-medium text-black">
+                            Page Performance
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-schedise-red font-semibold text-lg">
+                            Optimized
+                          </span>
+                          <TrendingUp className="h-4 w-4 text-schedise-red" />
+                        </div>
                       </div>
-                      <div className="w-full bg-gray-200 h-4 rounded-full overflow-hidden">
-                        <div className="bg-green-500 h-full rounded-full" style={{ width: '42%' }}></div>
+                      <div className="relative">
+                        <div className="w-full bg-neutral-100 h-3 rounded-full overflow-hidden">
+                          <div
+                            className="bg-schedise-red h-full rounded-full transition-all duration-1000 ease-out"
+                            style={{ width: "90%" }}
+                          >
+                            <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 animate-shimmer" />
+                          </div>
+                        </div>
+                        <p className="mt-3 text-sm text-neutral-600">
+                          Maintains smooth page loading without impacting
+                          performance
+                        </p>
                       </div>
                     </div>
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium">Data Usage</span>
-                        <span className="text-green-600 font-medium">-63%</span>
+
+                    <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-200/50 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
+                      <div className="flex justify-between items-center mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-schedise-red/10 rounded-lg">
+                            <BarChart className="h-5 w-5 text-schedise-red" />
+                          </div>
+                          <span className="font-medium text-black">
+                            Data Efficiency
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-schedise-red font-semibold text-lg">
+                            Reduced
+                          </span>
+                          <TrendingUp className="h-4 w-4 text-schedise-red" />
+                        </div>
                       </div>
-                      <div className="w-full bg-gray-200 h-4 rounded-full overflow-hidden">
-                        <div className="bg-green-500 h-full rounded-full" style={{ width: '37%' }}></div>
+                      <div className="relative">
+                        <div className="w-full bg-neutral-100 h-3 rounded-full overflow-hidden">
+                          <div
+                            className="bg-schedise-red h-full rounded-full transition-all duration-1000 ease-out"
+                            style={{ width: "85%" }}
+                          >
+                            <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 animate-shimmer" />
+                          </div>
+                        </div>
+                        <p className="mt-3 text-sm text-neutral-600">
+                          Saves data by blocking unnecessary ad content
+                        </p>
                       </div>
                     </div>
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium">CPU Usage</span>
-                        <span className="text-green-600 font-medium">-45%</span>
+
+                    <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-200/50 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
+                      <div className="flex justify-between items-center mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-schedise-red/10 rounded-lg">
+                            <PieChart className="h-5 w-5 text-schedise-red" />
+                          </div>
+                          <span className="font-medium text-black">
+                            Resource Usage
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-schedise-red font-semibold text-lg">
+                            Efficient
+                          </span>
+                          <TrendingUp className="h-4 w-4 text-schedise-red" />
+                        </div>
                       </div>
-                      <div className="w-full bg-gray-200 h-4 rounded-full overflow-hidden">
-                        <div className="bg-green-500 h-full rounded-full" style={{ width: '55%' }}></div>
+                      <div className="relative">
+                        <div className="w-full bg-neutral-100 h-3 rounded-full overflow-hidden">
+                          <div
+                            className="bg-schedise-red h-full rounded-full transition-all duration-1000 ease-out"
+                            style={{ width: "95%" }}
+                          >
+                            <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 animate-shimmer" />
+                          </div>
+                        </div>
+                        <p className="mt-3 text-sm text-neutral-600">
+                          Lightweight extension with minimal CPU impact
+                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="flex-1 flex justify-center">
-                  <div className="w-full max-w-sm">
-                    <div className="flex items-center justify-center">
-                      <BarChart className="h-48 w-48 text-schedise-indigo opacity-90" />
+
+                  <div className="flex-1 bg-white rounded-2xl p-8 shadow-sm border border-neutral-200/50 flex flex-col items-center justify-center">
+                    <div className="relative w-64 h-64">
+                      <div className="absolute inset-0 bg-schedise-red/10 rounded-full animate-spin-slow" />
+                      <div className="absolute inset-4 bg-white rounded-full" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <Shield className="h-16 w-16 text-schedise-red mx-auto mb-4" />
+                          <div className="text-xl font-bold text-black mb-2">
+                            Safe & Fast
+                          </div>
+                          <div className="text-neutral-600">
+                            Browsing Experience
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-center text-sm text-gray-600 mt-4">
-                      Based on tests across 1,000 popular websites
+                    <p className="text-center text-sm text-neutral-600 mt-6 max-w-sm">
+                      Our extension is designed to enhance your browsing
+                      experience while maintaining optimal performance and
+                      privacy.
                     </p>
                   </div>
                 </div>
@@ -302,59 +445,74 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Trust Section - IMPROVED WITH GRAPHIC */}
+        {/* Privacy Section */}
         <section className="py-16 bg-white">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">We Respect Your Privacy</h2>
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="md:w-1/2">
-                  <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-sm relative overflow-hidden">
-                    <div className="absolute top-0 right-0 h-24 w-24 bg-schedise-red/5 rounded-full -mr-6 -mt-6"></div>
-                    <div className="absolute bottom-0 left-0 h-16 w-16 bg-schedise-indigo/5 rounded-full -ml-4 -mb-4"></div>
-                    <p className="text-gray-700 relative z-10 font-medium">
-                      We don't track your browsing history. Your data stays private, and our extension is designed to be lightweight, using minimal system resources.
+            <div className="max-w-5xl mx-auto">
+              <div className="w-full h-[500px] bg-white relative overflow-hidden rounded-2xl shadow-xl border border-neutral-200/50">
+                <Spotlight
+                  className="-top-40 left-0 md:left-60 md:-top-20"
+                  fill="schedise-red"
+                  size={400}
+                />
+
+                <div className="flex h-full">
+                  {/* Left content */}
+                  <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                      We Respect Your Privacy
+                    </h2>
+                    <p className="mt-4 text-gray-600 max-w-lg text-lg">
+                      We don't track your browsing history. Your data stays
+                      private, and our extension is designed to be lightweight,
+                      using minimal system resources.
                     </p>
-                    <div className="mt-6 pt-6 border-t border-gray-200">
-                      <div className="flex items-center space-x-4">
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="h-3 w-3 bg-green-500 rounded-full"></div>
-                          <div className="h-3 w-3 bg-schedise-red rounded-full"></div>
-                          <div className="h-3 w-3 bg-schedise-indigo rounded-full"></div>
-                        </div>
-                        <div className="text-sm font-medium text-gray-600">No tracking cookies</div>
+                    <div className="mt-8 flex items-center gap-4">
+                      <div className="flex items-center gap-3 bg-green-50 rounded-full px-4 py-2">
+                        <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm text-gray-700">
+                          No tracking cookies
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3 bg-schedise-red/10 rounded-full px-4 py-2">
+                        <div className="h-2 w-2 bg-schedise-red rounded-full animate-pulse"></div>
+                        <span className="text-sm text-gray-700">
+                          Data protected
+                        </span>
                       </div>
                     </div>
+                    <div className="mt-8">
+                      <CTAButton
+                        href="/privacy"
+                        variant="secondary"
+                        className="bg-transparent hover:bg-transparent text-gray-900 hover:text-schedise-red border-0 shadow-none flex items-center gap-2 transition-colors"
+                      >
+                        Read Our Privacy Policy
+                        <ChevronRight size={18} />
+                      </CTAButton>
+                    </div>
                   </div>
-                  <div className="mt-6 text-center">
-                    <CTAButton 
-                      href="/privacy" 
-                      variant="secondary"
-                    >
-                      Read Our Privacy Policy
-                    </CTAButton>
-                  </div>
-                </div>
-                <div className="md:w-1/2">
-                  <div className="relative">
-                    {/* Lock and Shield Illustration */}
-                    <div className="bg-gray-100 p-8 rounded-lg relative">
-                      <div className="flex flex-col items-center justify-center">
-                        <div className="h-24 w-24 bg-schedise-red rounded-full flex items-center justify-center mb-4 shadow-lg">
-                          <Lock size={48} className="text-white" />
+
+                  {/* Right content */}
+                  <div className="flex-1 relative hidden md:block">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="relative">
+                        {/* Main lock icon */}
+                        <div className="h-32 w-32 bg-gray-100 rounded-full flex items-center justify-center backdrop-blur-sm">
+                          <Lock size={64} className="text-gray-900" />
                         </div>
-                        <div className="h-16 w-16 bg-schedise-indigo absolute top-4 right-8 rounded-full flex items-center justify-center shadow-lg">
-                          <Shield size={32} className="text-white" />
+
+                        {/* Orbiting elements */}
+                        <div className="absolute -top-12 -right-12 h-16 w-16 bg-schedise-red/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                          <Shield size={32} className="text-schedise-red" />
                         </div>
-                        <div className="h-12 w-12 bg-green-500 absolute bottom-4 left-8 rounded-full flex items-center justify-center shadow-lg">
-                          <CheckCircle2 size={24} className="text-white" />
+                        <div className="absolute -bottom-8 -left-8 h-12 w-12 bg-green-100 rounded-full flex items-center justify-center backdrop-blur-sm">
+                          <CheckCircle2 size={24} className="text-green-600" />
                         </div>
-                        
-                        {/* Connection Lines */}
-                        <div className="absolute h-1 w-20 bg-gray-300 top-16 right-24 transform rotate-45"></div>
-                        <div className="absolute h-1 w-20 bg-gray-300 bottom-16 left-24 transform -rotate-45"></div>
-                        
-                        <div className="text-center mt-3 text-sm font-medium text-gray-700">Your data is protected</div>
+
+                        {/* Connection lines */}
+                        <div className="absolute h-px w-24 bg-gradient-to-r from-gray-200/0 via-gray-200 to-gray-200/0 top-8 -right-8 rotate-45"></div>
+                        <div className="absolute h-px w-20 bg-gradient-to-r from-gray-200/0 via-gray-200 to-gray-200/0 bottom-12 -left-4 -rotate-45"></div>
                       </div>
                     </div>
                   </div>
@@ -364,42 +522,54 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Final CTA Section - WITH RED BACKGROUND */}
-        <section className="py-16 bg-schedise-red text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute right-0 top-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute left-0 bottom-0 w-96 h-96 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
-          </div>
-          <div className="container-custom relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready for a Cleaner Web Experience?</h2>
-              <p className="text-xl mb-8">
-                Join thousands of users enjoying ad-free browsing. It's free, fast, and easy to install.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <CTAButton 
-                  href="https://chrome.google.com/webstore" 
-                  variant="primary"
-                  size="lg"
-                  className="bg-white text-schedise-red hover:bg-gray-100"
-                >
-                  Add to Chrome - It's Free
-                </CTAButton>
-                <CTAButton 
-                  href="/premium" 
-                  variant="secondary"
-                  size="lg"
-                  className="bg-transparent border border-white text-white hover:bg-white/10"
-                >
-                  Explore Premium
-                </CTAButton>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Final CTA Section - Using Banner Component */}
+        <Banner
+          title="Ready for a Cleaner Web Experience?"
+          description="Join thousands of users enjoying ad-free browsing. It's free, fast, and easy to install."
+          primaryAction={{
+            text: "Add to Chrome - It's Free",
+            href: "https://chrome.google.com/webstore",
+          }}
+          secondaryAction={{
+            text: "Explore Premium",
+            href: "/premium",
+          }}
+        />
       </main>
 
       <Footer />
+    </div>
+  );
+};
+
+const BackgroundGrid = ({
+  pattern,
+  size,
+}: {
+  pattern?: [number, number][];
+  size?: number;
+}) => {
+  const p =
+    pattern ??
+    ([
+      [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+      [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+      [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+      [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+      [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+    ] as [number, number][]);
+  return (
+    <div className="pointer-events-none absolute left-1/2 top-0 -ml-20 -mt-2 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+      <div className="absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] from-zinc-100/30 to-zinc-300/30 opacity-100">
+        <GridPattern
+          width={size ?? 20}
+          height={size ?? 20}
+          x="-12"
+          y="4"
+          squares={p}
+          className="absolute inset-0 h-full w-full mix-blend-overlay stroke-black/10 fill-black/10"
+        />
+      </div>
     </div>
   );
 };

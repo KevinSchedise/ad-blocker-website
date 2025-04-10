@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -14,7 +13,7 @@ const Navbar = () => {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const navigation = [
@@ -29,7 +28,11 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2" onClick={scrollToTop}>
+          <Link
+            to="/"
+            className="flex items-center space-x-2"
+            onClick={scrollToTop}
+          >
             <div className="h-9 w-9 bg-schedise-red rounded-full flex items-center justify-center">
               <div className="text-white">
                 <ShieldX className="h-5 w-5" />
@@ -68,7 +71,11 @@ const Navbar = () => {
                 asChild
                 className="bg-schedise-red hover:bg-schedise-red/90 text-white"
               >
-                <Link to="https://chrome.google.com/webstore" target="_blank" rel="noopener noreferrer">
+                <Link
+                  to="https://chrome.google.com/webstore"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Add to Chrome
                 </Link>
               </Button>
@@ -94,12 +101,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={cn(
-          "md:hidden",
-          isOpen ? "block" : "hidden"
-        )}
-      >
+      <div className={cn("md:hidden", isOpen ? "block" : "hidden")}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-b border-gray-100">
           {navigation.map((item) => {
             const isActive = location.pathname === item.href;
@@ -127,9 +129,9 @@ const Navbar = () => {
               asChild
               className="w-full bg-schedise-red hover:bg-schedise-red/90 text-white"
             >
-              <Link 
-                to="https://chrome.google.com/webstore" 
-                target="_blank" 
+              <Link
+                to="https://chrome.google.com/webstore"
+                target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
               >
