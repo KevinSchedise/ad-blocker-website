@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -12,73 +11,110 @@ const Privacy = () => {
           <div className="container-custom">
             <div className="max-w-3xl mx-auto">
               <h1 className="heading-1 mb-6">Privacy Policy</h1>
-              <p className="text-gray-600 mb-8">Last updated: April 9, 2025</p>
+              <p className="text-gray-600 mb-8">Last updated: May 20, 2023</p>
 
               <div className="prose prose-lg max-w-none">
                 <p>
-                  At Schedise, we take your privacy seriously. This Privacy Policy describes how we collect, use, and handle your personal information when you use our Ad Blocker extension and visit our website.
+                  At Schedise, we prioritize your privacy and data security.
+                  This Privacy Policy describes how our Ad Blocker extension
+                  operates and our strict no-collection policy regarding your
+                  personal information.
                 </p>
 
-                <h2 className="text-2xl font-bold mt-8 mb-4">Information We Collect</h2>
+                <h2 className="text-2xl font-bold mt-8 mb-4">
+                  No Data Collection Policy
+                </h2>
                 <p>
-                  <strong>Extension Usage:</strong> We collect minimal anonymous usage data to help us improve our product, such as:
+                  We are committed to privacy by design. Our Ad Blocker
+                  extension:
                 </p>
                 <ul className="list-disc pl-6 mb-4">
-                  <li>Installation, uninstallation, and update events</li>
-                  <li>Basic extension interaction events (e.g., toggling the extension on/off)</li>
-                  <li>Aggregate statistics on the number of ads blocked (without identifying specific websites you visit)</li>
+                  <li>Does NOT collect your browsing history</li>
+                  <li>Does NOT track the websites you visit</li>
+                  <li>
+                    Does NOT collect any personally identifiable information
+                  </li>
+                  <li>Does NOT transmit your data to any external servers</li>
                 </ul>
 
+                <h2 className="text-2xl font-bold mt-8 mb-4">
+                  Required Permissions
+                </h2>
                 <p>
-                  <strong>Website Usage:</strong> When you visit our website, we collect standard log information and use cookies to analyze traffic patterns and improve your experience.
+                  Our extension requires certain permissions to function
+                  effectively:
+                </p>
+                <ul className="list-disc pl-6 mb-4">
+                  <li>
+                    <strong>&lt;all_urls&gt;:</strong> Required to detect and
+                    block ads across websites you visit
+                  </li>
+                  <li>
+                    <strong>Scripting:</strong> Needed to apply ad-blocking
+                    rules on web pages
+                  </li>
+                  <li>
+                    <strong>Tabs:</strong> Used to apply ad-blocking when you
+                    navigate between tabs
+                  </li>
+                </ul>
+                <p>
+                  These permissions are used exclusively for providing
+                  ad-blocking functionality and are not used to collect,
+                  transmit, or store your browsing activity.
                 </p>
 
-                <h2 className="text-2xl font-bold mt-8 mb-4">What We DON'T Collect</h2>
+                <h2 className="text-2xl font-bold mt-8 mb-4">
+                  Local Data Storage
+                </h2>
+                <p>The only data stored by our extension is:</p>
                 <ul className="list-disc pl-6 mb-4">
-                  <li>Your browsing history</li>
-                  <li>The specific websites you visit</li>
-                  <li>Any personally identifiable information without your explicit consent</li>
-                  <li>Any content of your web communications</li>
+                  <li>Ad-blocking statistics (total number of ads blocked)</li>
+                  <li>Extension settings and preferences you configure</li>
                 </ul>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4">How We Use Information</h2>
-                <p>We use the information we collect to:</p>
-                <ul className="list-disc pl-6 mb-4">
-                  <li>Improve and optimize our ad blocker's performance</li>
-                  <li>Update and enhance our blocking rules</li>
-                  <li>Understand how users interact with our extension</li>
-                  <li>Respond to your support requests</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4">Data Sharing and Disclosure</h2>
                 <p>
-                  We do not sell, trade, or rent your personal information to third parties. We may share anonymous, aggregated data with trusted analytics partners who help us understand usage patterns.
+                  This data is stored locally on your device using Chrome's
+                  storage.sync API, which may sync this information across your
+                  devices if you're signed into Chrome. This data never leaves
+                  your Google account and is not accessible to us or any third
+                  parties.
                 </p>
 
-                <h2 className="text-2xl font-bold mt-8 mb-4">Security</h2>
+                <h2 className="text-2xl font-bold mt-8 mb-4">
+                  No Data Sharing
+                </h2>
                 <p>
-                  We implement appropriate technical and organizational measures to protect your information against unauthorized access, alteration, or destruction.
+                  We do not share, sell, rent, or trade any information with
+                  third parties. Since we don't collect your data, there is
+                  simply nothing to share.
                 </p>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4">Your Rights</h2>
                 <p>
-                  Depending on your location, you may have rights regarding your personal information, including:
+                  As we don't collect your personal data, there is no need to:
                 </p>
                 <ul className="list-disc pl-6 mb-4">
-                  <li>The right to access information we have about you</li>
-                  <li>The right to request deletion of your data</li>
-                  <li>The right to object to processing</li>
-                  <li>The right to data portability</li>
+                  <li>Request access to your personal information</li>
+                  <li>Request deletion of your data</li>
+                  <li>Opt-out of data collection</li>
                 </ul>
+                <p>You remain in complete control of your data at all times.</p>
 
-                <h2 className="text-2xl font-bold mt-8 mb-4">Changes to This Policy</h2>
+                <h2 className="text-2xl font-bold mt-8 mb-4">
+                  Changes to This Policy
+                </h2>
                 <p>
-                  We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+                  We may update this Privacy Policy from time to time to reflect
+                  changes in our practices or for legal, operational, or
+                  regulatory reasons. We will notify you of any material changes
+                  by posting the new Privacy Policy on this page and updating
+                  the "Last updated" date.
                 </p>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4">Contact Us</h2>
                 <p>
-                  If you have questions about this Privacy Policy or our data practices, please contact us at:
+                  If you have questions about this Privacy Policy or our privacy
+                  practices, please contact us at:
                 </p>
                 <p className="font-medium">privacy@schedise.com</p>
               </div>
