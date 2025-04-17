@@ -29,36 +29,47 @@ const ScrollToTop = () => {
   return null;
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <CustomCursor />
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/premium" element={<Premium />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
+const App = () => {
+  // Firefox detection in the App component
+  useEffect(() => {
+    const isFirefox =
+      navigator.userAgent.toLowerCase().indexOf("firefox") !== -1;
+    if (isFirefox) {
+      document.documentElement.classList.add("firefox");
+    }
+  }, []);
 
-          {/* Knowledge Base Routes */}
-          <Route
-            path="/knowledge/getting-started"
-            element={<GettingStarted />}
-          />
-          <Route path="/knowledge/whitelisting" element={<Whitelisting />} />
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <CustomCursor />
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/premium" element={<Premium />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
 
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+            {/* Knowledge Base Routes */}
+            <Route
+              path="/knowledge/getting-started"
+              element={<GettingStarted />}
+            />
+            <Route path="/knowledge/whitelisting" element={<Whitelisting />} />
+
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

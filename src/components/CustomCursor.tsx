@@ -3,8 +3,14 @@ import { useEffect, useState } from "react";
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [isFirefox, setIsFirefox] = useState(false);
 
   useEffect(() => {
+    // Detect Firefox browser
+    const isFirefoxBrowser =
+      navigator.userAgent.toLowerCase().indexOf("firefox") !== -1;
+    setIsFirefox(isFirefoxBrowser);
+
     const updatePosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
@@ -22,6 +28,11 @@ const CustomCursor = () => {
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
+
+  // Don't render custom cursor for Firefox
+  if (isFirefox) {
+    return null;
+  }
 
   return (
     <>

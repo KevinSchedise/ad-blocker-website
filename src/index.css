@@ -27,9 +27,22 @@
   transition: transform 0.15s ease-out, border-color 0.3s ease-in-out;
 }
 
-/* Hide default cursor */
-* {
-  cursor: none !important;
+/* Hide default cursor on non-Firefox browsers */
+@supports not (-moz-appearance:none) {
+  html:not(.firefox) * {
+    cursor: none !important;
+  }
+}
+
+/* Firefox-specific cursor styles - use default cursor */
+@supports (-moz-appearance:none) {
+  * {
+    cursor: auto;
+  }
+  
+  a, button, [role="button"], input, textarea, select, [onclick], [tabindex] {
+    cursor: pointer;
+  }
 }
 
 /* Change cursor color on interactive elements */

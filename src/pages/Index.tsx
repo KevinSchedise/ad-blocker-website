@@ -42,7 +42,7 @@ const Index = () => {
                 <div className="inline-block px-4 py-1.5 bg-schedise-indigo/10 rounded-full text-schedise-indigo font-medium text-sm mb-6">
                   Browse Faster. Browse Safer.
                 </div>
-                
+
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                   <span className="text-schedise-red block">
                     Stop Seeing Ads.
@@ -76,7 +76,6 @@ const Index = () => {
                   trackers. Experience websites as they were meant to be –
                   clean, fast, and private.
                 </p>
-              
 
                 <div className="mt-8 flex items-center flex-wrap gap-6">
                   <div className="flex items-center gap-2">
@@ -142,13 +141,6 @@ const Index = () => {
                     <div className="flex items-center">
                       <Shield size={14} className="mr-1" />
                       <span>Ads Blocked: 14</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-1/3 right-6 -mr-4 hidden lg:block">
-                  <div className="bg-white p-3 rounded-full shadow-xl border border-gray-100">
-                    <div className="h-12 w-12 bg-schedise-red rounded-full flex items-center justify-center">
-                      <ShieldX size={24} className="text-white" />
                     </div>
                   </div>
                 </div>
@@ -468,13 +460,13 @@ const Index = () => {
                       using minimal system resources.
                     </p>
                     <div className="mt-8 flex items-center gap-4">
-                      <div className="flex items-center gap-3 bg-green-50 rounded-full px-4 py-2">
+                      <div className="flex items-center gap-3 bg-green-50 rounded-full px-4 py-2 relative z-10">
                         <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
                         <span className="text-sm text-gray-700">
                           No tracking cookies
                         </span>
                       </div>
-                      <div className="flex items-center gap-3 bg-schedise-red/10 rounded-full px-4 py-2">
+                      <div className="flex items-center gap-3 bg-schedise-red/10 rounded-full px-4 py-2 relative z-10">
                         <div className="h-2 w-2 bg-schedise-red rounded-full animate-pulse"></div>
                         <span className="text-sm text-gray-700">
                           Data protected
@@ -498,15 +490,15 @@ const Index = () => {
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="relative">
                         {/* Main lock icon */}
-                        <div className="h-32 w-32 bg-gray-100 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <div className="h-32 w-32 bg-gray-100 rounded-full flex items-center justify-center backdrop-blur-sm z-[1]">
                           <Lock size={64} className="text-gray-900" />
                         </div>
 
                         {/* Orbiting elements */}
-                        <div className="absolute -top-12 -right-12 h-16 w-16 bg-schedise-red/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <div className="absolute -top-12 -right-12 h-16 w-16 bg-schedise-red/10 rounded-full flex items-center justify-center backdrop-blur-sm z-[1]">
                           <Shield size={32} className="text-schedise-red" />
                         </div>
-                        <div className="absolute -bottom-8 -left-8 h-12 w-12 bg-green-100 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <div className="absolute -bottom-8 -left-8 h-12 w-12 bg-green-100 rounded-full flex items-center justify-center backdrop-blur-sm z-[1]">
                           <CheckCircle2 size={24} className="text-green-600" />
                         </div>
 
