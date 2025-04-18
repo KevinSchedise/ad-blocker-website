@@ -119,7 +119,7 @@ const Navbar = () => {
             </div>
             <div className="ml-6">
               <Link
-                to="https://chrome.google.com/webstore"
+                to="https://chromewebstore.google.com/detail/ad-blocker-schedise/cefmjbpojmcoagdhbhbaefcidbblngjg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors text-schedise-red"
@@ -173,7 +173,7 @@ const Navbar = () => {
             );
           })}
           <Link
-            to="https://chrome.google.com/webstore"
+            to="https://chromewebstore.google.com/detail/ad-blocker-schedise/cefmjbpojmcoagdhbhbaefcidbblngjg"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3 py-2 text-base font-medium text-schedise-red"

@@ -1,28 +1,27 @@
+import Banner from "@/components/Banner";
 import CTAButton from "@/components/CTAButton";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { GridPattern } from "@/components/ui/grid-pattern";
+import { Spotlight } from "@/components/ui/spotlight";
 import {
   BarChart,
   CheckCircle2,
   ChevronRight,
+  Download,
   LineChart,
   Lock,
   PieChart,
   Shield,
   ShieldCheck,
-  ShieldX,
+  Sparkles,
   TrendingUp,
   XCircle,
   Zap,
-  Download,
-  Sparkles,
 } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Spotlight } from "@/components/ui/spotlight";
-import Banner from "@/components/Banner";
 
 const Index = () => {
   useEffect(() => {
@@ -52,7 +51,7 @@ const Index = () => {
 
                 <div className="flex flex-col sm:flex-row mb-4 gap-4">
                   <Link
-                    to="https://chrome.google.com/webstore"
+                    to="https://chromewebstore.google.com/detail/ad-blocker-schedise/cefmjbpojmcoagdhbhbaefcidbblngjg"
                     className="group flex items-center justify-center gap-2 py-3 text-gray-900 transition-all duration-300 hover:text-schedise-red"
                   >
                     <Download className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
@@ -520,7 +519,7 @@ const Index = () => {
           description="Join thousands of users enjoying ad-free browsing. It's free, fast, and easy to install."
           primaryAction={{
             text: "Add to Chrome - It's Free",
-            href: "https://chrome.google.com/webstore",
+            href: "https://chromewebstore.google.com/detail/ad-blocker-schedise/cefmjbpojmcoagdhbhbaefcidbblngjg",
           }}
           secondaryAction={{
             text: "Explore Premium",

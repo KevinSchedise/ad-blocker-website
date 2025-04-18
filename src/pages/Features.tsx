@@ -111,7 +111,7 @@ const Features = () => {
           </div>
           <div className="flex flex-col sm:flex-row justify-center pt-5 gap-4">
             <Link
-              to="https://chrome.google.com/webstore"
+              to="https://chromewebstore.google.com/detail/ad-blocker-schedise/cefmjbpojmcoagdhbhbaefcidbblngjg"
               className="group flex items-center justify-center gap-2 py-3 text-gray-900 transition-all duration-300 hover:text-schedise-red"
             >
               <Download className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
@@ -275,7 +275,7 @@ const Features = () => {
           description="Get started with our powerful ad blocker and enjoy a cleaner, faster web experience today."
           primaryAction={{
             text: "Install Free Version",
-            href: "https://chrome.google.com/webstore",
+            href: "https://chromewebstore.google.com/detail/ad-blocker-schedise/cefmjbpojmcoagdhbhbaefcidbblngjg",
           }}
           secondaryAction={{
             text: "Upgrade to Premium",

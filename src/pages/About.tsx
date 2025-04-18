@@ -332,7 +332,7 @@ const About = () => {
           description="Help us create a better web experience for everyone. Install Ad Blocker by Schedise today."
           primaryAction={{
             text: "Add to Chrome - It's Free",
-            href: "https://chrome.google.com/webstore",
+            href: "https://chromewebstore.google.com/detail/ad-blocker-schedise/cefmjbpojmcoagdhbhbaefcidbblngjg",
           }}
           secondaryAction={{
             text: "Learn More",
